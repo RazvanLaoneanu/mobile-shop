@@ -1,0 +1,74 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Save User</title>
+
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/style.css}" />
+    <link rel="stylesheet" type="text/css" media="all"
+          th:href="@{/css/add-customer-style.css}" />
+
+</head>
+
+<body>
+
+<div id="wrapper">
+    <div id="header">
+        <h2>SAM - USer Add Module</h2>
+    </div>
+</div>
+
+<div id="container">
+    <h3>Save User</h3>
+
+    <form action="#" th:action="@{/user/saveUser}" th:object="${user}" method="post">
+
+        <!-- need to associate this data with customer id -->
+        <input type="hidden" th:field="*{id}" />
+
+        <table>
+            <tbody>
+            <tr>
+                <td><label>Name:</label></td>
+                <td><input th:field="*{name}"/></td>
+            </tr>
+
+            <tr>
+                <td><label>Password</label></td>
+                <td><input th:field="*{password}"/></td>
+            </tr>
+            <tr>
+                <td><label>Admin:</label></td>
+                <td><input th:field="*{admin}"/></td>
+            </tr>
+            <tr>
+                <td><label></label></td>
+                <td><input type="submit" value="Save" class="save" /></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </form>
+
+    <div style="clear: both;"></div>
+
+    <p>
+        <a href="/user/list">Back to List</a>
+    </p>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
